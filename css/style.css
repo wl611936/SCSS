@@ -45,4 +45,36 @@
 .col-12 {
   flex: 0 0 calc(100% / 12 * 12);
 }
+
+.t-left {
+  text-align: left;
+}
+
+.t-right {
+  text-align: right;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-justify {
+  text-align: justify;
+}
+
+.container-sm {
+  width: 100%;
+}
+
+.container-md {
+  width: 720px;
+}
+
+.container-lg {
+  width: 960px;
+}
+
+.container-xl {
+  width: 1200px;
+}
 /*# sourceMappingURL=style.css.map */

@@ -3,3 +3,29 @@
     flex: 0 0 calc(100% / 12 * #{$i});
   }
 }
+
+$aligns: left right center justify;
+@each $align in $aligns{
+  .t-#{$align}{
+    text-align: $align;
+  }
+}
+
+$breakpoint:(
+  sm: 480px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+);
+@each $name, $width in $breakpoint{
+  @if($name == 'sm'){
+    .container-#{$name}{
+      width: 100%;
+    }
+  }
+  @else{
+    .container-#{$name}{
+      width: $width;
+    }
+  }
+}
