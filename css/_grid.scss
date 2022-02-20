@@ -1,0 +1,42 @@
+$breakpoints:(
+  all: 0,
+  sm: 480px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+);
+$grid: 12;
+.full-width{
+  width: 100%;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+@each $name, $width in $breakpoints{
+  @media(min-width: #{$width}){
+    @if($name == all){
+      .fixed-width{
+        margin: auto;
+        width: 100%;
+      }
+    }
+    @else{
+      .fixed-width{
+        width: $width;
+      }
+    }
+    @for $i from 1 through $grid{
+      @if($name == all){
+        .col-#{$i}{
+          flex: 0 0 calc(100% / #{$grid} * #{$i});
+        }
+      }
+      @else{
+        .col-#{$name}-#{$i}{
+          flex: 0 0 calc(100% / #{$grid} * #{$i});
+        }
+      }
+    }    
+  }
+}
